@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { use, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
@@ -10,6 +10,7 @@ const MobileMenu = ({
   mobileMenu,
   setMobileMenu,
 }) => {
+  const [show, setShow] = useState("-left-[300px]");
   const data = [
     { id: 1, name: "Home", url: "/" },
     { id: 2, name: "About", url: "/components/about" },
@@ -29,37 +30,50 @@ const MobileMenu = ({
     <div className="flex md:hidden">
       {!mobileMenu ? (
         <BiMenuAltRight
-          onClick={() => setMobileMenu(!mobileMenu)}
-          className="text-[20px]"
+          onClick={() => {
+            setMobileMenu(!mobileMenu);
+            setShow("left-0");
+          }}
+          className="text-[30px]"
         />
       ) : (
-        <div>
+        <div className="">
           <VscChromeClose
             onClick={() => setMobileMenu(!mobileMenu)}
-            className="text-[20px]"
+            className="text-[30px]"
           />
-          <ul className="w-full bg-white absolute top-[50px] left-0 px-7 h-[calc(100vh-50px)] flex flex-col items-start font-bold text-black">
+          <ul
+            className={`w-full bg-white absolute top-[50px] px-0 md:px-7 h-[calc(100vh)] flex flex-col items-start font-bold text-black z-20 transition-transform delay-1000 duration-300 ${show}`}
+          >
             {data.map((item) => {
               return (
                 <React.Fragment key={item.id}>
                   {!!item?.subMenu ? (
                     <li
-                      onClick={() => setShowCatMenu(!showCatMenu)}
-                      className="flex py-3 border-t flex-col w-full relative"
+                      onClick={() => {
+                        setShowCatMenu(!showCatMenu);
+                      }}
+                      className="w-full flex flex-col py-3 border-t relative"
                     >
-                      <div className="flex w-full justify-between pr-4 items-center">
+                      <div className="flex w-full justify-between px-7 items-center">
                         {item?.name}
                         <BsChevronDown size={14} />
                       </div>
                       {showCatMenu && (
-                        <ul className="bg-white px-1 w-full absolute top-10 text-black shadow-lg">
+                        <ul className="bg-white px-1 w-full absolute md:mt-0 top-[49px] text-black shadow-lg">
                           {subMenuData.map((item) => {
                             return (
-                              <Link key={item.id} href={item.route}>
-                                <li className="color-black h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] gap-4">
+                              <Link
+                                onClick={() => {
+                                  setMobileMenu(false);
+                                }}
+                                key={item.id}
+                                href={item.route}
+                              >
+                                <li className="color-black h-12 flex justify-between items-center px-6 bg-black/[0.03] hover:bg-black/[0.03] gap-4">
                                   {item.name}
                                   <span className="opacity-50 text-sm">
-                                    {item.doc_count}
+                                    ({item.doc_count})
                                   </span>
                                 </li>
                               </Link>
@@ -69,9 +83,15 @@ const MobileMenu = ({
                       )}
                     </li>
                   ) : (
-                    <li className="border-t py-3 w-full last-of-type:border-b">
-                      <Link href={item?.url}>{item.name}</Link>
-                    </li>
+                    <Link
+                      className="border-t px-7 py-3 w-full last-of-type:border-b"
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
+                      href={item?.url}
+                    >
+                      <li>{item.name}</li>
+                    </Link>
                   )}
                 </React.Fragment>
               );
