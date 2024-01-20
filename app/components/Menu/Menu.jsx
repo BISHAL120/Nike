@@ -11,11 +11,31 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
   ];
 
   const subMenuData = [
-    { id: 1, name: "Jordan", doc_count: 11, route: "/jordan" },
-    { id: 2, name: "Sneakers", doc_count: 8, route: "/sneakers" },
-    { id: 3, name: "Running shoes", doc_count: 64, route: "/running" },
-    { id: 4, name: "Football shoes", doc_count: 107, route: "/football" },
-    { id: 4, name: "Store", doc_count: 1, route: "/store" },
+    {
+      id: 1,
+      name: "Jordan",
+      doc_count: 11,
+      route: "/components/category/Jordan",
+    },
+    {
+      id: 2,
+      name: "Sneakers",
+      doc_count: 8,
+      route: "/components/category/Sneakers",
+    },
+    {
+      id: 3,
+      name: "Running shoes",
+      doc_count: 64,
+      route: "/components/category/Running-Shoes",
+    },
+    {
+      id: 4,
+      name: "Football shoes",
+      doc_count: 107,
+      route: "/components/category/Football-Shoes",
+    },
+    { id: 4, name: "Store", doc_count: 1, route: "/components/category/store" },
   ];
 
   return (
@@ -40,7 +60,7 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
                             <li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] gap-4">
                               {item.name}
                               <span className="opacity-50 text-sm">
-                                {item.doc_count}
+                                ({item.doc_count})
                               </span>
                             </li>
                           </Link>
