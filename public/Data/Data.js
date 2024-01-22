@@ -581,7 +581,7 @@ export const JordanShoes = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "Jordan Stadium brown",
     category: "Jordan",
     products: {
@@ -624,13 +624,14 @@ export const JordanShoes = [
       "https://i.ibb.co/sv7ctxQ/jordan-stadium-90-mens-shoes-q1-QWc-C.webp",
     ],
   },
-  /* { id: 6,
-    name: "Jordan Stadium white & green",
+  {
+    id: 7,
+    name: "Jordan 6 Rings",
     category: "Jordan",
     products: {
-      originalPrice: 140,
+      originalPrice: 170,
       discountPrice: 105.97,
-      discount: 24,
+      discount: 10,
       size: [
         "7",
         "7.5",
@@ -651,21 +652,23 @@ export const JordanShoes = [
         "17",
         "18",
       ],
-      stockOut: ["7", "8", "11.5", "12.5"],
+      stockOut: ["7", "8", "11", "12.5"],
       description:
-        "Comfort is king, but that doesn't mean you have to sacrifice style. Taking design inspiration from the AJ1 and AJ5, the Stadium 90 is ready for everyday wear. The upper is made of leather and airy woven, so you get both breathability and durability, and Nike Air cushioning in the sole keeps your every step light and cushioned.",
+        "Celebrate the legendary career of 'His Airness' with the Jordan 6 Rings. Incorporating key features of each shoe worn during the championship series, it has premium details and lightweight, low-profile Zoom Air cushioning that delivers a responsive feel underfoot.",
     },
     images: [
-      "https://i.ibb.co/w6Ghvmr/jordan-stadium-90-mens-shoes-q1-QWc-C-1.jpg",
-      "https://i.ibb.co/RjtB6dw/jordan-stadium-90-mens-shoes-q1-QWc-C.jpg",
-      "https://i.ibb.co/mCZvBwj/jordan-stadium-90-mens-shoes-q1-QWc-C-3.jpg",
-      "https://i.ibb.co/16svQp8/jordan-stadium-90-mens-shoes-q1-QWc-C-1.webp",
-      "https://i.ibb.co/hg8vX4d/jordan-stadium-90-mens-shoes-q1-QWc-C-2.jpg",
-      "https://i.ibb.co/JmdbPGF/jordan-stadium-90-mens-shoes-q1-QWc-C-2.webp",
-      "https://i.ibb.co/KjdRY7s/jordan-stadium-90-mens-shoes-q1-QWc-C-3.webp",
-      "https://i.ibb.co/7XFxh8k/jordan-stadium-90-mens-shoes-q1-QWc-C.webp",
+      "https://i.ibb.co/k0SpTgx/jordan-6-rings-mens-shoes-2-VAD3-Y-3.webp",
+      "https://i.ibb.co/S3rhhcZ/jordan-6-rings-mens-shoes-2-VAD3-Y.jpg",
+      "https://i.ibb.co/kBkVBTq/jordan-6-rings-mens-shoes-2-VAD3-Y-2.webp",
+      "https://i.ibb.co/3WySMX8/jordan-6-rings-mens-shoes-2-VAD3-Y.webp",
+      "https://i.ibb.co/3WySMX8/jordan-6-rings-mens-shoes-2-VAD3-Y.webp",
+      "https://i.ibb.co/6rm61mL/jordan-6-rings-mens-shoes-2-VAD3-Y-3.jpg",
+      "https://i.ibb.co/j8Bt7Tn/jordan-6-rings-mens-shoes-2-VAD3-Y-1.jpg",
+      "https://i.ibb.co/HdMWdgP/jordan-6-rings-mens-shoes-2-VAD3-Y-2.jpg",
+      "https://i.ibb.co/bzKFng8/jordan-6-rings-mens-shoes-2-VAD3-Y-1.webp",
+      "https://i.ibb.co/jMCQv5D/jordan-6-rings-mens-shoes-2-VAD3-Y-4.jpg",
     ],
-  }, */
+  },
 ];
 
 /* [ '7', '8', '11.5', '12.5' ],
