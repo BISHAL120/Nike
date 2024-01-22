@@ -85,6 +85,7 @@ const SingleProduct = ({ params }) => {
               <div class="grid grid-cols-3 gap-2">
                 {selectedProduct.products.size.map((i) => (
                   <div
+                    key={i}
                     className={`${
                       selectedProduct.products?.stockOut.includes(i)
                         ? "hover:cursor-not-allowed bg-black/[0.5] opacity-50 hover:border-none"
