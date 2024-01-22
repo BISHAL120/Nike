@@ -1,3 +1,9 @@
+This is a nike shoes selling e-commerce project.i have tried copy some of the frontEnd feature like the single product page the slider etc.. In this project i use next.js 14.0.1 which comes with tailwind css and react-router-dom by default. i have use so many libraries like ( react icon, react-responsive-carousel, react-mulli-carousel ). today is Jan 23. and i completed the frontEnd.
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
