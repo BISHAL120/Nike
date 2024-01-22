@@ -29,9 +29,7 @@ const RelatedProduct = ({ products }) => {
         itemClass="px-[10px]"
       >
         {products?.map((ProductData) => (
-          <div key={ProductData.name} className="rounded-lg">
-            <ProductCard ProductData={ProductData} />
-          </div>
+          <ProductCard ProductData={ProductData} />
         ))}
       </Carousel>
     </div>
