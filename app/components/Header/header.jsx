@@ -33,7 +33,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", controlNavbar);
     };
-  }, [lastScrollY, controlNavbar]);
+  }, [lastScrollY]);
   return (
     <header
       className={`w-full h-[50px] md:h-[80px] bg-white flex justify-between items-center top-0 z-20 sticky transition-transform duration-300 ${show}`}
