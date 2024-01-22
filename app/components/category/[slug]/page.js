@@ -1,10 +1,17 @@
+"use client";
 import React from "react";
 import Wrapper from "../../Header/Wrapper";
 import Product from "../../Product/Product-Card";
-import { ProductData } from "@/public/Data/Data";
+import { JordanShoes, ProductData } from "@/public/Data/Data";
 import ProductCard from "../../Product/Product-Card";
 
 const Category = ({ params }) => {
+  let selectedCategory;
+  if (params.slug === "Jordan") {
+    selectedCategory = JordanShoes;
+  } else if (params.slug === "Sneakers") {
+    selectedCategory = ProductData;
+  }
   return (
     <div className="w-full md:my-20">
       <Wrapper>
@@ -14,8 +21,8 @@ const Category = ({ params }) => {
           </div>
         </div>
         {/* Products start */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 gap-5 my-16 px-5 md:px-0">
-          {ProductData?.map((item) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5 my-16 px-0 md:px-5">
+          {selectedCategory?.map((item) => (
             <ProductCard key={item.id} ProductData={item} />
           ))}
         </div>

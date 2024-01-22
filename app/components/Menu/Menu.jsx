@@ -35,7 +35,7 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
       doc_count: 107,
       route: "/components/category/Football-Shoes",
     },
-    { id: 4, name: "Store", doc_count: 1, route: "/components/category/store" },
+    { id: 5, name: "Store", doc_count: 1, route: "/components/category/store" },
   ];
 
   return (
