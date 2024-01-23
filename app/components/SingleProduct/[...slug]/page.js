@@ -1,5 +1,5 @@
 import React from "react";
-import { JordanShoes, ProductData } from "@/public/Data/Data";
+import { JordanShoes, ProductData, Running } from "@/public/Data/Data";
 import ImageCarosel from "../../ProductDetailCarosel/ImageCarosel";
 import Wrapper from "../../Header/Wrapper";
 import { IoMdHeartEmpty, IoIosCart } from "react-icons/io";
@@ -11,6 +11,8 @@ const SingleProduct = ({ params }) => {
     selectedCategory = JordanShoes;
   } else if (params.slug[0] === "Sneakers") {
     selectedCategory = ProductData;
+  } else if (params.slug[0] === "Running-Shoes") {
+    selectedCategory = Running;
   }
 
   const previousName = params.slug[1].split("-");
