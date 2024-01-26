@@ -1,23 +1,35 @@
 "use client";
 import React from "react";
 import Wrapper from "../../Header/Wrapper";
-import { JordanShoes, ProductData, Running } from "@/public/Data/Data";
+import {
+  JordanShoes,
+  ProductData,
+  Running,
+  Football,
+} from "@/public/Data/Data";
 import ProductCard from "../../Product/Product-Card";
 
 const Category = ({ params }) => {
   let selectedCategory;
   if (params.slug[0] === "Jordan") {
-    selectedCategory = JordanShoes;
-    console.log(params.slug);
-  } else if (params.slug[0] === "Sneakers") {
-    selectedCategory = ProductData;
-    console.log(params.slug);
-    console.log(ProductData);
+    const previousName = params.slug[1].split("-");
+    const name = previousName.join(" ");
+    const product = JordanShoes.find((item) => item.name === name);
+    selectedCategory = product.varients;
+  } else if (params.slug[0] === "Lifestyle") {
+    const previousName = params.slug[1].split("-");
+    const name = previousName.join(" ");
+    const product = ProductData.find((item) => item.name === name);
+    selectedCategory = product.varients;
   } else if (params.slug[0] === "Running-Shoes") {
     const previousName = params.slug[1].split("-");
     const name = previousName.join(" ");
-
     const product = Running.find((item) => item.name === name);
+    selectedCategory = product.varients;
+  } else if (params.slug[0] === "Football-Shoes") {
+    const previousName = params.slug[1].split("-");
+    const name = previousName.join(" ");
+    const product = Football.find((item) => item.name === name);
     selectedCategory = product.varients;
   }
   return (
@@ -25,7 +37,7 @@ const Category = ({ params }) => {
       <Wrapper>
         <div className="text-center max-w-[800px] mx-auto mt-8 md:mt-0">
           <div className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
-            {params.slug[0]}
+            {params.slug[1]}
           </div>
         </div>
         {/* Products start */}

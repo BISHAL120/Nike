@@ -1,20 +1,22 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import React from "react";
 
 const ProductCard = (ProductData) => {
+  const params = useParams();
+  const name = params.slug[1];
   const originalPrice = ProductData?.ProductData?.products?.originalPrice;
   const discount = ProductData?.ProductData?.products?.discount;
   const totalDiscount = (discount / 100) * originalPrice;
   const discountPrice = originalPrice - totalDiscount;
-
   const previousName = ProductData.ProductData.name.split(" ");
-  const name = previousName.join("-");
+  const Name = previousName.join("-");
 
   return (
     <Link
-      href={`/components/SingleProduct/${ProductData.ProductData.category}/${name}/`}
+      href={`/components/SingleProduct/${ProductData.ProductData.category}/${name}/${Name}`}
       className="max-w-[500px] mx-auto transform overflow-hidden bg-white duration-200 md:hover:scale-105 cursor-pointer"
     >
       <Image
@@ -32,10 +34,10 @@ const ProductCard = (ProductData) => {
             &#0036;{discountPrice.toFixed(2)}
           </p>
           <p className="text-base ml-auto md:ml-0 font-medium line-through">
-            &#0036;{originalPrice}
+            {!originalPrice === discountPrice && <> &#0036;{originalPrice}</>}
           </p>
           <p className="ml-0 md:ml-auto text-base font-medium text-green-500 ">
-            {discount}% off
+            {!discount === 0 && <>{discount}% off</>}
           </p>
         </div>
       </div>

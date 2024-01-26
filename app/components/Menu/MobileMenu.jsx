@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { use, useState } from "react";
+import { JordanShoes, ProductData, Running } from "@/public/Data/Data";
 import { BsChevronDown } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
@@ -22,20 +23,20 @@ const MobileMenu = ({
     {
       id: 1,
       name: "Jordan",
-      doc_count: 11,
-      route: "/components/category/Jordan",
+      doc_count: JordanShoes.length,
+      route: "/components/categories/Jordan",
     },
     {
       id: 2,
       name: "Sneakers",
-      doc_count: 8,
-      route: "/components/category/Sneakers",
+      doc_count: ProductData.length,
+      route: "/components/categories/Sneakers",
     },
     {
       id: 3,
       name: "Running shoes",
-      doc_count: 64,
-      route: "/components/category/Running-Shoes",
+      doc_count: Running.length,
+      route: "/components/categories/Running-Shoes",
     },
     {
       id: 4,
@@ -43,7 +44,6 @@ const MobileMenu = ({
       doc_count: 107,
       route: "/components/category/Football-Shoes",
     },
-    { id: 5, name: "Store", doc_count: 1, route: "/components/category/store" },
   ];
 
   return (

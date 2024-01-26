@@ -1,5 +1,10 @@
 import React from "react";
-import { JordanShoes, ProductData, Running } from "@/public/Data/Data";
+import {
+  JordanShoes,
+  ProductData,
+  Running,
+  Football,
+} from "@/public/Data/Data";
 import ImageCarosel from "../../ProductDetailCarosel/ImageCarosel";
 import Wrapper from "../../Header/Wrapper";
 import { IoMdHeartEmpty, IoIosCart } from "react-icons/io";
@@ -8,19 +13,55 @@ import RelatedProduct from "../../RelatedProduct/RelatedProduct";
 const SingleProduct = ({ params }) => {
   let selectedCategory;
   if (params.slug[0] === "Jordan") {
-    selectedCategory = JordanShoes;
-  } else if (params.slug[0] === "Sneakers") {
-    selectedCategory = ProductData;
+    const previousName = params.slug[1].split("-");
+    const name = previousName.join(" ");
+    const Products = JordanShoes.find((item) => item.name === name);
+    selectedCategory = Products.varients;
+  } else if (params.slug[0] === "Lifestyle") {
+    const previousName = params.slug[1].split("-");
+    const name = previousName.join(" ");
+    const Products = ProductData.find((item) => item.name === name);
+    selectedCategory = Products.varients;
   } else if (params.slug[0] === "Running-Shoes") {
-    selectedCategory = Running;
+    const previousName = params.slug[1].split("-");
+    const name = previousName.join(" ");
+    const Products = Running.find((item) => item.name === name);
+    selectedCategory = Products.varients;
+  } else if (params.slug[0] === "Football-Shoes") {
+    const previousName = params.slug[1].split("-");
+    const name = previousName.join(" ");
+    const Products = Football.find((item) => item.name === name);
+    selectedCategory = Products.varients;
   }
 
-  const previousName = params.slug[1].split("-");
+  const previousName = params.slug[2].split("-");
   const name = previousName.join(" ");
-
   const selectedProduct = selectedCategory.find(
     (product) => product.name === name
   );
+
+  /*   let array = [];
+  const index = [];
+
+  while (index.length <= 3) {
+    const numbers = Math.floor(Math.random() * selectedCategory.length);
+
+    // Check if the generated number is not already in the index array
+    if (
+      numbers !== parseInt(params.slug[2]) &&
+      !index.includes(numbers) &&
+      numbers !== 0
+    ) {
+      index.push(numbers);
+
+      const restProduct = selectedCategory.find(
+        (product) => product.id === numbers
+      );
+      array.push(restProduct);
+    }
+  }
+
+  const restProduct = array; */
 
   const restProduct = selectedCategory.filter(
     (product) => product.name !== name

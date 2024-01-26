@@ -1,7 +1,12 @@
 import Link from "next/link";
 import React from "react";
 import { BsChevronDown } from "react-icons/bs";
-import { JordanShoes, ProductData, Running } from "@/public/Data/Data";
+import {
+  JordanShoes,
+  ProductData,
+  Running,
+  Football,
+} from "@/public/Data/Data";
 
 const Menu = ({ showCatMenu, setShowCatMenu }) => {
   const data = [
@@ -13,16 +18,16 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
 
   const subMenuData = [
     {
+      id: 2,
+      name: "Lifestyle",
+      doc_count: ProductData.length,
+      route: "/components/categories/Lifestyle",
+    },
+    {
       id: 1,
       name: "Jordan",
       doc_count: JordanShoes.length,
-      route: "/components/category/Jordan",
-    },
-    {
-      id: 2,
-      name: "Sneakers",
-      doc_count: ProductData.length,
-      route: "/components/category/Sneakers",
+      route: "/components/categories/Jordan",
     },
     {
       id: 3,
@@ -33,10 +38,9 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
     {
       id: 4,
       name: "Football shoes",
-      doc_count: 107,
-      route: "/components/category/Football-Shoes",
+      doc_count: Football.length,
+      route: "/components/categories/Football-Shoes",
     },
-    { id: 5, name: "Store", doc_count: 1, route: "/components/category/store" },
   ];
 
   return (
