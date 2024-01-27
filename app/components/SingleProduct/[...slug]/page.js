@@ -36,32 +36,10 @@ const SingleProduct = ({ params }) => {
 
   const previousName = params.slug[2].split("-");
   const name = previousName.join(" ");
+
   const selectedProduct = selectedCategory.find(
     (product) => product.name === name
   );
-
-  /*   let array = [];
-  const index = [];
-
-  while (index.length <= 3) {
-    const numbers = Math.floor(Math.random() * selectedCategory.length);
-
-    // Check if the generated number is not already in the index array
-    if (
-      numbers !== parseInt(params.slug[2]) &&
-      !index.includes(numbers) &&
-      numbers !== 0
-    ) {
-      index.push(numbers);
-
-      const restProduct = selectedCategory.find(
-        (product) => product.id === numbers
-      );
-      array.push(restProduct);
-    }
-  }
-
-  const restProduct = array; */
 
   const restProduct = selectedCategory.filter(
     (product) => product.name !== name
