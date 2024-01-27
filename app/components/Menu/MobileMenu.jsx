@@ -1,6 +1,11 @@
 import Link from "next/link";
 import React, { use, useState } from "react";
-import { JordanShoes, ProductData, Running } from "@/public/Data/Data";
+import {
+  JordanShoes,
+  ProductData,
+  Running,
+  Football,
+} from "@/public/Data/Data";
 import { BsChevronDown } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
