@@ -21,7 +21,8 @@ const CategoryCard = ({ item }) => {
         />
         <div className="pt-4 md:p-4 max-w-[500px] text-black/[0.9]">
           <h2 className="text-xl md:text-3xl font-bold text-center ">
-            {item.name}
+            <span>{item.name}</span>{" "}
+            <span className="block">({item.varients.length})</span>
           </h2>
         </div>
       </Link>

@@ -16,29 +16,38 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
     { id: 4, name: "Contact", url: "/contact" },
   ];
 
+  const countProduct = (category) => {
+    let productCount = 0;
+    category.forEach((item) => {
+      const count = item.varients.length;
+      productCount = count + productCount;
+    });
+    return productCount;
+  };
+
   const subMenuData = [
     {
       id: 2,
       name: "Lifestyle",
-      doc_count: ProductData.length,
+      doc_count: countProduct(ProductData),
       route: "/components/categories/Lifestyle",
     },
     {
       id: 1,
       name: "Jordan",
-      doc_count: JordanShoes.length,
+      doc_count: countProduct(JordanShoes),
       route: "/components/categories/Jordan",
     },
     {
       id: 3,
       name: "Running shoes",
-      doc_count: Running.length,
+      doc_count: countProduct(Running),
       route: "/components/categories/Running-Shoes",
     },
     {
       id: 4,
       name: "Football shoes",
-      doc_count: Football.length,
+      doc_count: countProduct(Football),
       route: "/components/categories/Football-Shoes",
     },
   ];
