@@ -23,7 +23,7 @@ const Cart = () => {
                   {/* art items start */}
                   <div className="text-lg font-bold">Cart Items</div>
                   {allProducts.map((product) => (
-                    <Cartitem product={product} />
+                    <Cartitem key={product.id} product={product} />
                   ))}
                   {/* <Cartitem />
               <Cartitem />

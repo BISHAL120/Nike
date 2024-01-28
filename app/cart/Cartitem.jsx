@@ -43,7 +43,7 @@ const Cartitem = ({ product }) => {
             <div className="font-semibold">Size:</div>
             <select className="hover:text-black outline-none cursor-pointer w-20">
               {size.map((size) => (
-                <option className="text-lg" value={size}>
+                <option key={size} className="text-lg" value={size}>
                   {size}
                 </option>
               ))}
