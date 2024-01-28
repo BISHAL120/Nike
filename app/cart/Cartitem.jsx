@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
@@ -6,7 +7,7 @@ const Cartitem = () => {
     <div className="flex py-5 gap-3 md:gap-5 border-b">
       {/* image start */}
       <div className="aspect-square w-[50px] md:w-[120px] shrink-0">
-        <img
+        <Image
           src="https://i.ibb.co/ws5d0cy/pegasus-trail-4-gore-tex-mens-waterproof-trail-running-shoes-qdc-SR6-2.webp"
           alt="shoes img"
           srcset=""
@@ -19,14 +20,14 @@ const Cartitem = () => {
             Air Jordan XXXVII Low PF
           </div>
           <div className="text-sm md:text-md font-medium text-black/[0.5] block md:hidden">
-            Men's Basketball Shoes
+            Men&apos;s Basketball Shoes
           </div>
           <div className="text-sm md:text-md font-bold text-black/[0.5] mt-2">
             Price : &#0036;16295
           </div>
         </div>
         <div className="text-md font-medium text-black/[0.5] hidden md:block">
-          Men's Basketball Shoes
+          Men&apos;s Basketball Shoes
         </div>
         <div className="flex items-center mt-4 gap-2 md:gap-10 text-black/[0.5] text-sm md:text-md">
           <div className="flex items-center gap-1">
