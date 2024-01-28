@@ -11,6 +11,7 @@ import ProductCard from "./components/Product/Product-Card";
 import Image from "next/image";
 import Link from "next/link";
 import CategoryCard from "./components/CategoryCards/CategoryCard";
+import { updateCardCount } from "./AddToCard";
 
 export default function Home() {
   return (

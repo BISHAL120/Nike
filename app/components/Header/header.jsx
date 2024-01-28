@@ -8,7 +8,7 @@ import Menu from "../Menu/Menu";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BsCart } from "react-icons/bs";
 import MobileMenu from "../Menu/MobileMenu";
-
+import { allProducts, updateCardCount } from "@/app/AddToCard";
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showCatMenu, setShowCatMenu] = useState(false);
@@ -27,6 +27,8 @@ const Header = () => {
     }
     setLastScrollY(window.scrollY);
   };
+  const previousCount = localStorage.getItem("products");
+  const count = JSON.parse(previousCount)?.length;
 
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
@@ -51,14 +53,14 @@ const Header = () => {
               5
             </div>
           </div>
-          <div className="w-8 md:w-12 h-8 md:h-12 flex items-center justify-center rounded-full hover:bg-black/[0.05] cursor-pointer relative">
-            <Link href="/cart">
+          <Link href="/cart">
+            <div className="w-8 md:w-12 h-8 md:h-12 flex items-center justify-center rounded-full hover:bg-black/[0.05] cursor-pointer relative">
               <BsCart className="text-[27px] md:text-[20px]" />
-            </Link>
-            <div className="h-[18px] md:h-[18px] w-[18px] md:w-[18px] bg-red-600 rounded-full absolute top-[-3px] md:top-1 left-5 md:left-7 text-white text-[10px] md:text-[12px] flex justify-center items-center px-[2px] md:px-[5px]">
-              5
+              <div className="h-[18px] md:h-[18px] w-[18px] md:w-[18px] bg-red-600 rounded-full absolute top-[-3px] md:top-1 left-5 md:left-7 text-white text-[10px] md:text-[12px] flex justify-center items-center px-[2px] md:px-[5px]">
+                {count || 0}
+              </div>
             </div>
-          </div>
+          </Link>
           <MobileMenu
             showCatMenu={showCatMenu}
             setShowCatMenu={setShowCatMenu}

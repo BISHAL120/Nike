@@ -1,29 +1,38 @@
 import Image from "next/image";
 import React from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { reload, removeFromCart } from "../AddToCard";
 
-const Cartitem = () => {
+const Cartitem = ({ product }) => {
+  const size = product.products.size.filter(
+    (item) => !product.products.stockOut.includes(item)
+  );
+  console.log(size);
   return (
     <div className="flex py-5 gap-3 md:gap-5 border-b">
       {/* image start */}
       <div className="aspect-square w-[50px] md:w-[120px] shrink-0">
         <Image
-          src="https://i.ibb.co/ws5d0cy/pegasus-trail-4-gore-tex-mens-waterproof-trail-running-shoes-qdc-SR6-2.webp"
+          src={product.images[0]}
           alt="shoes img"
-          srcset=""
+          width={150}
+          height={150}
+          srcset="square"
         />
       </div>
       {/* image end */}
       <div className="w-full flex flex-col">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="text-lg md:text-2xl font-semibold text-black/[0.8]">
-            Air Jordan XXXVII Low PF
+            {product.name}
           </div>
           <div className="text-sm md:text-md font-medium text-black/[0.5] block md:hidden">
-            Men&apos;s Basketball Shoes
+            {product.subtitle || product.category}
           </div>
           <div className="text-sm md:text-md font-bold text-black/[0.5] mt-2">
-            Price : &#0036;16295
+            Price : &#0036;
+            {product.products.originalPrice -
+              product.products.originalPrice / product.products.discount}
           </div>
         </div>
         <div className="text-md font-medium text-black/[0.5] hidden md:block">
@@ -33,8 +42,12 @@ const Cartitem = () => {
           <div className="flex items-center gap-1">
             <div className="font-semibold">Size:</div>
             <select className="hover:text-black outline-none cursor-pointer w-20">
-              <option value="UK 6">UK 6</option>
-              <option value="UK 6.5">UK 6.5</option>
+              {size.map((size) => (
+                <option className="text-lg" value={size}>
+                  {size}
+                </option>
+              ))}
+              {/* <option value="UK 6.5">UK 6.5</option>
               <option value="UK 7">UK 7</option>
               <option value="UK 7.5">UK 7.5</option>
               <option value="UK 8">UK 8</option>
@@ -48,7 +61,7 @@ const Cartitem = () => {
               </option>
               <option value="UK 11.5" disabled>
                 UK 11.5
-              </option>
+              </option> */}
             </select>
           </div>
           <div className="flex items-center gap-1">
@@ -66,7 +79,13 @@ const Cartitem = () => {
               <option value="10">10</option>
             </select>
           </div>
-          <div className="ml-auto cursor-pointer text-black/[0.5] hover:text-black text-[16px] md:text-[20px]">
+          <div
+            onClick={() => {
+              removeFromCart(product);
+              reload();
+            }}
+            className="ml-auto cursor-pointer text-black/[0.5] hover:text-black text-[16px] md:text-[20px]"
+          >
             <RiDeleteBin6Line />
           </div>
         </div>

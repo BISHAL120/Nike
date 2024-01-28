@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   JordanShoes,
@@ -9,6 +10,7 @@ import ImageCarosel from "../../ProductDetailCarosel/ImageCarosel";
 import Wrapper from "../../Header/Wrapper";
 import { IoMdHeartEmpty, IoIosCart } from "react-icons/io";
 import RelatedProduct from "../../RelatedProduct/RelatedProduct";
+import { AddToCard, reload, updateCardCount } from "@/app/AddToCard";
 
 const SingleProduct = ({ params }) => {
   let selectedCategory;
@@ -120,7 +122,13 @@ const SingleProduct = ({ params }) => {
               {/* Selection Section End */}
             </div>
             <div className="mb-3">
-              <button className="bg-black text-lg hover:opacity-75 text-white flex items-center justify-center cursor-pointer py-4 w-full rounded-full ">
+              <button
+                onClick={() => {
+                  AddToCard(selectedProduct);
+                  reload();
+                }}
+                className="bg-black text-lg hover:opacity-75 text-white flex items-center justify-center cursor-pointer py-4 w-full rounded-full "
+              >
                 Add to Cart <IoIosCart size={20} className="ml-2" />
               </button>
             </div>
