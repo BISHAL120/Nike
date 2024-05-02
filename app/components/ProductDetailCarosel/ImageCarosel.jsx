@@ -18,7 +18,7 @@ const ImageCarosel = ({ images }) => {
         className="productCarousel"
         renderThumbs={() =>
           images?.map((img) => (
-            <img
+            <Image
               key={img}
               src={img} // Use the same image source for both main and thumbnail
               width={60} // Adjust width as needed for thumbnails

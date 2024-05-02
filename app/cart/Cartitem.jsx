@@ -12,7 +12,6 @@ const Cartitem = ({ product }) => {
           alt="shoes img"
           width={150}
           height={150}
-          srcset="square"
         />
       </div>
       {/* image end */}
@@ -68,9 +67,9 @@ const Cartitem = ({ product }) => {
             </select>
           </div>
           <div
-            onClick={() => {
+            /*  onClick={() => {
               removeFromCart(product);
-            }}
+            }} */
             className="ml-auto cursor-pointer text-black/[0.5] hover:text-black text-[16px] md:text-[20px]"
           >
             <RiDeleteBin6Line />

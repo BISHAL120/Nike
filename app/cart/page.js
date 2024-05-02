@@ -51,9 +51,10 @@ const Cart = () => {
             </div>
           </div>
 
-          <div className="flex-[2] flex flex-col items-center pb-[50px] md:-mt-14">
+          {/* <div className="flex-[2] flex flex-col items-center pb-[50px] md:-mt-14">
             <Image
               src="https://i.ibb.co/F7cJfMG/image.png"
+              alt="Empty Cart Image"
               width={300}
               height={300}
               className="w-[300px] md:w-[400px]"
@@ -70,7 +71,7 @@ const Cart = () => {
             >
               Continue Shopping
             </Link>
-          </div>
+          </div> */}
         </Wrapper>
       </div>
     </main>
