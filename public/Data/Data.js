@@ -3578,3 +3578,22 @@ export const Football = [
 [ '11', '14', '16', '18' ],
 [ '9', '10.5', '11.5', '15' ],
  */
+
+/* strapi password ==   $BD@#eMeK5AL@BT   */
+
+/* 
+# Database
+DATABASE_CLIENT=postgres
+DATABASE_HOST=dpg-cmrkldicn0vc73dtrna0-a.singapore-postgres.render.com
+DATABASE_PORT=5432
+DATABASE_NAME=nike_zxf8
+DATABASE_USERNAME=nike_zxf8_user
+DATABASE_PASSWORD=rywPLwGXTIeVANd8wNgzjbw8oqihtVRH
+DATABASE_SSL=true
+JWT_SECRET=40yILTRxruU7btRr4PjnRA==
+
+*/
+
+/* 
+baaef5e502ea8ae4f66ddbec2f5e0d347c6f0b3e7afc19186a9214f24c5ec4c173004a5b34364ed858570d635ec18b6d1f289544034b687d0bfcd0d1606d88b548de52b208b855f230d9010666b163e4ab708eef74f90c90400186a1cc4431154a3124d0b085c2a7b61f255003fb3173085507b86ed009985d6835237d9fa16a
+*/

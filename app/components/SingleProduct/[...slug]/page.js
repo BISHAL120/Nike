@@ -10,7 +10,6 @@ import ImageCarosel from "../../ProductDetailCarosel/ImageCarosel";
 import Wrapper from "../../Header/Wrapper";
 import { IoMdHeartEmpty, IoIosCart } from "react-icons/io";
 import RelatedProduct from "../../RelatedProduct/RelatedProduct";
-import { AddToCard, reload, updateCardCount } from "@/app/AddToCard";
 
 const SingleProduct = ({ params }) => {
   let selectedCategory;
@@ -125,7 +124,6 @@ const SingleProduct = ({ params }) => {
               <button
                 onClick={() => {
                   AddToCard(selectedProduct);
-                  reload();
                 }}
                 className="bg-black text-lg hover:opacity-75 text-white flex items-center justify-center cursor-pointer py-4 w-full rounded-full "
               >
