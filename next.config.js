@@ -7,6 +7,11 @@ module.exports = nextConfig;
 
 module.exports = {
   images: {
-    domains: ["i.ibb.co"], // Add the domain of your image host
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+      },
+    ],
   },
 };
